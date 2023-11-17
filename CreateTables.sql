@@ -8,7 +8,7 @@ CREATE TABLE VideoInfo (
 CREATE TABLE CommentInfo (
     CommentID INT PRIMARY KEY,
     videoID INT REFERENCES VideoInfo(videoID),
-    Comment VARCHAR2(1000),
+    Comments VARCHAR2(1000),
     CommentLikes INT
 );
 
