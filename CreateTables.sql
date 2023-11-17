@@ -5,11 +5,11 @@ CREATE TABLE VideoInfo (
     viewCount INT
 );
 
-CREATE TABLE AudienceInfo (
-    audienceID INT PRIMARY KEY,
+CREATE TABLE CommentInfo (
+    CommentID INT PRIMARY KEY,
     videoID INT REFERENCES VideoInfo(videoID),
-    ageGroup VARCHAR2(50),
-    location VARCHAR2(255) 
+    Comment VARCHAR2(1000),
+    CommentLikes INT
 );
 
 CREATE TABLE EngagementMetrics (
@@ -19,6 +19,7 @@ CREATE TABLE EngagementMetrics (
     dislikes INT,
     comments INT
 );
+
 
 
 
