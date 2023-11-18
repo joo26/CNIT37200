@@ -1,22 +1,6 @@
 --------------------------------------------------------
 --  File created - Friday-November-17-2023   
 --------------------------------------------------------
---------------------------------------------------------
---  DDL for Table VIDEOINFO
---------------------------------------------------------
-
-  CREATE TABLE "JOO26"."VIDEOINFO" 
-   (	"VIDEOID" VARCHAR2(255 BYTE), 
-	"TITLE" VARCHAR2(255 BYTE), 
-	"UPLOADDATE" DATE, 
-	"VIEWCOUNT" NUMBER(*,0)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
 REM INSERTING into JOO26.VIDEOINFO
 SET DEFINE OFF;
 Insert into JOO26.VIDEOINFO (VIDEOID,TITLE,UPLOADDATE,VIEWCOUNT) values ('9BFPMqT4twI','Mylta Power Station Long drive &amp; Night Food Party Vlog | RON GAMING VLOGS',to_date('23-AUG-2022','DD-MON-RRRR'),66633);
@@ -1888,23 +1872,4 @@ Insert into JOO26.VIDEOINFO (VIDEOID,TITLE,UPLOADDATE,VIEWCOUNT) values ('zxYjTT
 Insert into JOO26.VIDEOINFO (VIDEOID,TITLE,UPLOADDATE,VIEWCOUNT) values ('ZYAiyoKVl78','House of the Dragon S1x1 Burlington Bar REACTION Part 1!',to_date('23-AUG-2022','DD-MON-RRRR'),205486);
 Insert into JOO26.VIDEOINFO (VIDEOID,TITLE,UPLOADDATE,VIEWCOUNT) values ('ZzLPUoetSHw','How To Make Every Sushi | Method Mastery | Epicurious',to_date('21-JUL-2022','DD-MON-RRRR'),1341953);
 Insert into JOO26.VIDEOINFO (VIDEOID,TITLE,UPLOADDATE,VIEWCOUNT) values ('zzUn1prQ5Ps','Trump and his allies flood airwaves with falsehoods after FBI search',to_date('13-AUG-2022','DD-MON-RRRR'),386949);
---------------------------------------------------------
---  DDL for Index SYS_C00558865
---------------------------------------------------------
 
-  CREATE UNIQUE INDEX "JOO26"."SYS_C00558865" ON "JOO26"."VIDEOINFO" ("VIDEOID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  Constraints for Table VIDEOINFO
---------------------------------------------------------
-
-  ALTER TABLE "JOO26"."VIDEOINFO" ADD PRIMARY KEY ("VIDEOID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
