@@ -22,72 +22,39 @@ fetch first 1 row only;
 
 
 /* Question #10 : QUERY that outputs the total_viewcount of a specified video. 
-It outputs the title of the video, and the number of views recorded. - Yooto */
+It outputs the title of the video, and the number of views recorded. - Stewart */
+
 SET SERVEROUTPUT ON;
 
 DECLARE
-    v_videoID VARCHAR2(255) := 'MnCilaL_3yo'; -- Replace with the actual videoID
-    v_totalViewCount INT;
-    v_videoTitle VARCHAR2(255);
+    v_videoid VARCHAR2(255) := 'XYZ';
+    v_total_viewcount INT;
+    v_video_title varchar2(500);
+
 BEGIN
-    -- Retrieve the total view count for the specified video
-    SELECT title, SUM(viewCount) 
-    INTO v_videoTitle, v_totalViewCount
-    FROM VideoInfo
-    WHERE videoID = v_videoID
-    GROUP BY title;
+    select videoid, title, sum(viewcount)
+    into v_video_title, v_total_viewcount
+    from videoinfo
+    where videoid = v_videoid
+    group by title;
 
-    -- Output the results
-    DBMS_OUTPUT.PUT_LINE('Video Name: ' || v_videoTitle);
-    DBMS_OUTPUT.PUT_LINE('Total View Count: ' || v_totalViewCount);
+    DBMS_OUTPUT.PUT_LINE(v_video_title);
+    DBMS_OUTPUT.PUT_LINE(v_total_viewcount);
 END;
-/
 
-/* Output the top 3 most watched videos, select the videoID, the title, and the viewcount. Do the same for the 3 most least watched videos. - Yooto */
 
-WITH VideoRanks AS (
-    SELECT
-        videoid,
-        title,
-        viewcount,
-        ROW_NUMBER() OVER (ORDER BY viewcount DESC) AS rank_high,
-        ROW_NUMBER() OVER (ORDER BY viewcount ASC) AS rank_low
-    FROM
-        videoinfo
-)
-SELECT
-    category,
-    videoid,
-    title,
-    viewcount
-FROM (
-    SELECT
-        'Top 3' AS category,
-        videoid,
-        title,
-        viewcount
-    FROM
-        VideoRanks
-    WHERE
-        rank_high <= 3
 
-    UNION ALL
+/* Output the top 3 most watched videos, select the videoID, the title, and the viewcount. Do the same for the 3 most least watched videos. - Stewart*/
 
-    SELECT
-        'Lowest 3' AS category,
-        videoid,
-        title,
-        viewcount
-    FROM
-        VideoRanks
-    WHERE
-        rank_low <= 3
-)
-ORDER BY
-    CASE
-        WHEN category = 'Top 3' THEN 1
-        WHEN category = 'Lowest 3' THEN 2
-    END, viewcount DESC;
+select videoid, title, viewcount 
+from videoinfo
+order by viewcount desc
+fetch first 3 rows only; 
+
+select videoid, title, viewcount 
+from videoinfo
+order by viewcount asc
+fetch first 3 rows only; 
 	
 	
 	
