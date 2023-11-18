@@ -1,0 +1,129 @@
+Milestone 1 project description:
+
+Gain  insight into crucial statistics, keywords, and characteristics of popular videos for tailoring content to audience preferences, maximizing viewer engagement, and ultimately growing the channel.
+Data:
+- Video view count
+- Watch time
+- Upload date / location 
+- Engagement metrics (likes, dislikes, comments)
+From this we hope to derive the following insights:
+- Most popular types of content
+- Optimal posting schedule
+- Audience preferences of location
+- Effectiveness of video titles 
+
+Question #1 Query to find the top 3 videos with the most comments. 
+
+/*
+Retrieve the top 3 videos with the most comments. SELECT the videoID and get the SUM of comments. Only output the first three rows of the query. You must use the FETCH statement. 
+*/
+
+This question uses sql to retrieve the first three rows of a query. The user must first SELECT VideoID and the SUM of comments. They must then order the query by descending order of comments. 
+
+
+Question #2 PROCEDURE for outputting the average_view_count for each age_group. 
+
+/*
+Create a PROCEDURE that outputs the average_view_count from each age_group. Use a LOOP. 
+-Accepts user input in the parameters. 
+-OUTPUT the average_view_count from each age_group in the format : 
+(‘Age Group:  ‘)
+(‘Average View Count: ‘ )
+- Handle input errors
+- Handle OTHER errors
+*/
+
+This question uses PL/SQL to output the average_view_count for each age_group. The question requires the user to LOOP through each age_group and calculate and output average_view_count from each group. 
+
+
+Question #3 Query to find the creator with the most uploads 
+
+/*
+Retrieve the 3 creators with the most amount of published videos. Only output the first three tows of the query. Output should include the creator’s channel_ID and their respective number of uploads. 
+
+*/
+
+This question uses an SQL query to retrieve the three creators with the most amount of published videos. The user should use SUM() for the videoID column to determine the most amount of uploads per creator. 
+
+
+Question #4 Query to find the the top 3 most watched and least watched videos 
+
+/* 
+
+create a query to display the title, viewcount, and video id for the specific videos depending on their viewcounts 
+*/
+
+This question uses a query to further filter the results from Question #3. This is done with the MAX() function. The MAX() function is also used to find the most amount of views on a video with a videoID belonging to the creator with the highest number of uploads. 
+
+
+
+Question #5 Query to find the top 3 videos with the most amount of views, and the lowest 3 with the least amount of views. 
+
+/*
+
+Retrieve top 3 videos with most viewed and then selecting the locations. Select VideoID, Location, Sum(Video view count). Only output the first three rows of the query. 
+
+/*
+This question uses a query to find the locations with the highest viewership for top 3 most viewed video. You should use SUM() and GROUP BY() to list outcome by locations.
+
+Question #6  Query to find the correlation between the upload date and video view count
+
+/*
+
+Analyzing the correlation between the upload date of videos and their view counts. Calculating the average view count for videos uploaded in different time periods and visualize the relationship between these averages and the upload date.
+
+*/
+This question uses a query is to find a dataset that shows the average view count for videos uploaded in different months. Using TO_CHAR(UploadDate, ‘YYYY-MM’ and AVG to get average viewcount. After that, ‘GROUP BY’ and ‘ORDER BY’ upload date.
+
+
+
+Question #7 Query to find the least popular date to film a video
+
+/*
+Retrieve least popular date to create a video. Select VideoID and upload date Only output the first row of the query. 
+
+*/
+This question uses a query to find the date with the lowest viewership and lowest number of published videos. You should use SUM(), GROUP BY(), and MIN() to list the location with the least views. 
+
+Question #8 Query to find the smallest creator with the most content
+
+Retreive the creator with the lowest average views per video who also has the most amount of uploads. 
+
+This question uses an SQL query to retrieve the creatorwith the most amount of published videos. The user should use SUM() for the videoID column. The MIN() and AVG() functions should also be used to find the smallest average views across the channel. 
+
+Question #9 Procedure for calculating Dislike - Like Ratio (CHANGE)
+
+/*
+CREATE a function that calculates the dislike-like ratio of a video. 
+-Accepts videoID input within the procedures parameters
+-Must output in the format ('Like-to-Dislike Ratio: ')
+-Must handle user input errors
+-Must handle OTHER errors
+-Include the section EXECUTE statement for testing and running the code. 
+*/
+
+
+This question uses PL/SQL to CREATE a procedure that uses variables and simple sql statements. The question itself is simple as long as the proper approach is taken. 
+
+
+Question #10 SQL Data Retrieval 
+
+/*
+Write a PL/SQL query that retrieves the total view count for a specific video. Declare variables, and find the SUM of the view_count for the video with the videoID “____”.  Output the video name and the view_count. 
+*/
+
+This question uses simple PL/SQL commands. The user must DECLARE variables, and use the BEGIN statement to execute the query. They must then format the data using DBMS_OUTPUT. 
+
+
+Teammember: Yooto Joo
+Contribution: Filtered data, imported all data, created tables, granted permissions to group
+
+Teammember: Stewart
+Contribution: Completed Questions for Milestone 3 
+
+Teammember: Minseong Jeong
+Contribution: Debugging 
+
+Teammember: Adam Hafez
+Contribution: Debugging
+
