@@ -16,7 +16,6 @@ CREATE TABLE EngagementMetrics (
     metricID INT PRIMARY KEY,
     videoID VARCHAR2(255) REFERENCES VideoInfo(videoID),
     likes INT,
-    dislikes INT,
     comments INT
 );
 
