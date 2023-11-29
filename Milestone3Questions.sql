@@ -30,7 +30,6 @@ order by viewcount asc
 fetch first 3 rows only; 
 
 /*top 3 videos with the most comments - (Question 5) Minseong */
--- Top 3 videos with the most comments
 SELECT c.videoID, v.title, COUNT(c.CommentID) AS commentCount
 FROM CommentInfo c
 JOIN VideoInfo v ON c.videoID = v.videoID
