@@ -1,8 +1,8 @@
 # CNIT37200
 
-Run the CreateTable.sql and then run the 3 .sql files to populate the tables. 
 
-Yooto : Made the Database, filtered the datasets
-Stewart : Edited Questions, debugged the database, made questions 
-Adam : Edited the database, debugged the database
-Minseong : Edited the database, debugged the database,Edited Questions
+
+Yooto : Created the document, re-coded Q1~Q10 SQL queries to be in the form of PL/SQL, edited all the queries to provide additional insights, checked for bugs, made the database, filtered and cleaned the data, granted access. 
+Adam : Re-coded blocks to PL/SQL, edited queries, debugging, document review
+Stewart : Coded original SQL queries, collected output, re-coded SQL to PL/SQL, debugging 
+Minseong : Debugging, Coded original SQL queries, made presentation
